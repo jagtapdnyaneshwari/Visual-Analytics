@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>08</title>
+	<link rel="stylesheet" href="./style1.css" />
+</head>
+
+<body>
+	<div class="wrapper">
+		<button class="btn">
+			<img src="usa.png" alt="usa">
+			<i class="ri-share-line"></i>
+		</button>
+		<ul class="list">
+			<li class="item">
+				<a href="fbi.html" class="link ig">
+					<img src="fbi.png" alt="fbi">
+				</a>
+			</li>
+			<li class="item" style="--d: 0.25s">
+				<a href="NSA.html" class="link tw">
+					<img src="nsa.jpg" alt="nsa">
+				</a>
+			</li>
+			<li class="item" style="--d: 0.5s">
+				<a href="cia.html" class="link sc">
+					<img src="cia.png" alt="cia">
+				</a>
+			</li>
+			<li class="item" style="--d: 0.75s">
+				<a href="DIA.html" class="link fb">
+					<img src="dia.png" alt="dia">
+				</a>
+			</li>
+			<li class="item" style="--d: 1s">
+				<a href="USCBP.html" class="link yt">
+					<img src="uscbp.jpg" alt="uscbp">
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<script>
+		const btnEl = document.querySelectorAll('.btn');
+		const toggleOptions = (event) => {
+			const wrapperEl = event.currentTarget.parentNode;
+			const iconEl = event.currentTarget.querySelector('i');
+
+			wrapperEl.classList.toggle('active');
+
+			if (iconEl.classList.contains('ri-share-line')) {
+				iconEl.classList.replace('ri-share-line', 'ri-close-line');
+			} else {
+				iconEl.classList.replace('ri-close-line', 'ri-share-line');
+			}
+
+
+		};
+		btnEl.forEach(btn => {
+			btn.addEventListener('click', toggleOptions);
+		});
+	</script>
+</body>
+
+</html>
